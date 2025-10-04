@@ -1,0 +1,19 @@
+- name: Launch EC2 instance
+  hosts: localhost
+  connection: local
+  gather_facts: no
+
+  tasks:
+    - name: Launch a new EC2 instance
+      amazon.aws.ec2_instance:
+        name: my-test-instance
+        key_name: aws-devops-kaypair
+        instance_type: t2.micro
+        image_id: ami-09c813fb71547fc4f # Replace with valid AMI ID
+        region: us-east-1
+        network:
+          assign_public_ip: yes
+          
+        tags:
+          Environment: Test
+          Project: Ansible
