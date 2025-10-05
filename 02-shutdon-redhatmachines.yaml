@@ -1,6 +1,5 @@
 - name: shutdown redhat systems
-  hosts: localhost
-  connection: local
+  hosts: web
   become: yes
   tasks:
    - name: shut redhat systems
