@@ -1,0 +1,7 @@
+- name: shutdown redhat systems
+  hosts: localhost
+  connection: local
+  tasks:
+   - name: shut redhat systems
+     ansible.builtin.shell: /usr/sbin/shutdown -h 0
+     when: ansible_facts['os_family'] =="RedHat"
