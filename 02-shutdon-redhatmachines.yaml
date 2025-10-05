@@ -1,6 +1,7 @@
 - name: shutdown redhat systems
   hosts: localhost
   connection: local
+  become: yes
   tasks:
    - name: shut redhat systems
      ansible.builtin.shell: /usr/sbin/shutdown -h 0
